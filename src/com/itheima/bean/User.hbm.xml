@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 通过class配置java类和数据表的映射关系
+    name属性：类的全限定名
+    table属性：表名；
+     -->
+    <class name="com.itheima.bean.User" table="t_user">
+        <!--通过id配置主键映射关系
+        name属性：当前类里面的id属性名
+        column属性：表里面的id列名；
+          -->
+        <id name="uid" column="uid">
+            <!-- 主键生成策略 -->
+            <generator class="native"></generator>
+        </id>
+        <!-- 通过property配置其它属性和列的映射关系 -->
+        <property name="uname" column="uname"/>
+        <property name="uage" column="uage"/>
+    </class>
+
+</hibernate-mapping>
